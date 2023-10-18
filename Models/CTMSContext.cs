@@ -8,4 +8,5 @@ public class CTMSContext : DbContext
 
     }
     
+    public DbSet<Tournament> Tournaments { get; set; }
 }
