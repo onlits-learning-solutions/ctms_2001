@@ -1,3 +1,4 @@
+namespace ctms_2001.Models;
 public class Tournament
 {
     public int Id { get; set; }
