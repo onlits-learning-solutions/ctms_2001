@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ctms_2001.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

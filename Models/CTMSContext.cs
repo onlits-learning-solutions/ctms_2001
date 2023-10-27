@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
+namespace ctms_2001.Models;
 public class CTMSContext : DbContext
 {
     public CTMSContext(DbContextOptions<CTMSContext> options) :
@@ -7,5 +8,6 @@ public class CTMSContext : DbContext
     {
 
     }
-    
+
+    public DbSet<Tournament> Tournaments { get; set; }
 }
