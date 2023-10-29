@@ -10,4 +10,6 @@ public class CTMSContext : DbContext
     }
 
     public DbSet<Tournament> Tournaments { get; set; }
+    public DbSet<Player> Players { get; set; }
+
 }
