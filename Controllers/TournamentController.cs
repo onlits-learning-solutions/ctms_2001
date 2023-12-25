@@ -12,8 +12,8 @@ public class TournamentController : Controller
     }
     public IActionResult Index()
     {
-
-        return View();
+        var tournaments = _context.Tournaments.ToList<Tournament>();
+        return View(tournaments);
     }
 
     public IActionResult Create()
