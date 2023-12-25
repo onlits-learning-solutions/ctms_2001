@@ -11,6 +11,12 @@ public class PlayerController : Controller
     {
         _context = context;
     }
+
+    public IActionResult Index()
+    {
+        var player = _context.Players.ToList<Player>();
+        return View(player);
+    }
     public IActionResult Create()
     {
         return View();
