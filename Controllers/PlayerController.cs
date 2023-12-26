@@ -22,7 +22,7 @@ public class PlayerController : Controller
         return View();
     }
     [HttpPost]
-    public string Create(Player player)
+    public IActionResult Create(Player player)
     {
         _context.Players.Add(new Player
         {
@@ -33,6 +33,7 @@ public class PlayerController : Controller
         }
         );
         _context.SaveChanges();
-        return "player created";
+        var players = _context.Players.ToList<Player>();
+        return View("Index",players);
     }
 }
