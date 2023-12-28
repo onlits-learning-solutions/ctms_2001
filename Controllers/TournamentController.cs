@@ -22,7 +22,7 @@ public class TournamentController : Controller
     }
 
     [HttpPost]
-    public string Create(Tournament tournament)
+    public IActionResult Create(Tournament tournament)
     {
         _context.Tournaments.Add(new Tournament
         {
@@ -32,6 +32,8 @@ public class TournamentController : Controller
             Venue = tournament.Venue
         });
         _context.SaveChanges();
-        return "Tournament Created!";
+
+        var tournaments = _context.Tournaments.ToList<Tournament>();
+        return View("Index", tournaments);
     }
 }
